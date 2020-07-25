@@ -19,7 +19,7 @@ function resizeCol($parent, $resizer, coords, $root) {
     let calcWidth = delta + coords.width;
     const line = $.create('div', 'col-resize--active');
     $resizer.append(line);
-    line.css({ height: '1000px' });
+    line.css({ height: '100vh' });
 
     document.onmousemove = e => {
         delta = e.pageX - coords.right;
@@ -31,7 +31,7 @@ function resizeCol($parent, $resizer, coords, $root) {
         document.onmousemove = null;
         document.onmouseup = null;
         $resizer.css({ right: 0 });
-        line.css({ height: 0 });
+        $resizer.remove('.col-resize--active');
         const width = calcWidth + 'px';
         $parent.css({ width });
         cells.forEach(el => el.style.width = calcWidth + 'px');
@@ -43,7 +43,7 @@ function resizeRow($parent, $resizer, coords) {
     let calcHeight = delta + coords.height;
     const line = $.create('div', 'row-resize--active');
     $resizer.append(line);
-    line.css({ width: '3000px' });
+    line.css({ width: '100vw' });
 
     document.onmousemove = e => {
         $resizer.css({ bottom: -delta + 'px' });
@@ -55,7 +55,7 @@ function resizeRow($parent, $resizer, coords) {
         document.onmousemove = null;
         document.onmouseup = null;
         $resizer.css({ bottom: 0 });
-        line.css({ width: 0 });
+        $resizer.remove('.row-resize--active');
         $parent.$el.style.height = calcHeight + 'px';
     };
 }
