@@ -13,7 +13,8 @@
         "require-jsdoc": "off",
         "linebreak-style": "off",
         "operator-linebreak": "off",
-        "no-debugger": "warn"
+        "no-debugger": "warn",
+        "keyword-spacing": "off"
     },
     "extends": [
         "eslint:recommended",
