@@ -20,6 +20,5 @@ export class Header extends ExcelComponent {
     onInput(event) {
         const value = event.target.value;
         this.$dispatch(actions.changeTableName(value));
-        console.log('value', value);
     }
 }
