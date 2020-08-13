@@ -1,8 +1,10 @@
 import {
     APPLY_STYLE,
-    CHANGE_STYLES, CHANGE_TABLE_NAME,
+    CHANGE_STYLES,
+    CHANGE_TABLE_NAME,
     CHANGE_TEXT,
-    TABLE_RESIZE
+    TABLE_RESIZE,
+    UPDATE_DATE
 } from '@/redux/types';
 
 // Action creator
@@ -38,5 +40,11 @@ export function changeTableName(data) {
     return {
         type: CHANGE_TABLE_NAME,
         data
+    };
+}
+
+export function updateDate() {
+    return {
+        type: UPDATE_DATE
     };
 }

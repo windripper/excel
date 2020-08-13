@@ -2,7 +2,9 @@ import {
     CHANGE_TEXT,
     CHANGE_STYLES,
     TABLE_RESIZE,
-    APPLY_STYLE, CHANGE_TABLE_NAME
+    APPLY_STYLE,
+    CHANGE_TABLE_NAME,
+    UPDATE_DATE
 } from '@/redux/types';
 
 export function rootReducer(state, action) {
@@ -25,7 +27,7 @@ export function rootReducer(state, action) {
         field = 'stylesState';
         val = state[field] || {};
         action.data.ids.forEach(id => {
-            val[id] = { ...value, ...action.data.value };
+            val[id] = { ...val[id], ...action.data.value };
         });
         return {
             ...state,
@@ -34,6 +36,8 @@ export function rootReducer(state, action) {
         };
     case CHANGE_TABLE_NAME:
         return { ...state, tableName: action.data };
+    case UPDATE_DATE:
+        return { ...state, lastTimeOpened: new Date().toJSON() };
     default:
         return state;
     }
