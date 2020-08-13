@@ -37,6 +37,7 @@ export class Formula extends ExcelComponent {
 
     onInput(event) {
         this.$emit('formula:input', $(event.target).text());
+        this.$formula.setCaret();
     }
 
     onKeydown(event) {
