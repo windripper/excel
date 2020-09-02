@@ -1,6 +1,8 @@
 ## Vanilla JS Excel
 A personal project which copies some of Google Sheets features built with HTML/CSS(SCSS) and vanilla JS.
 
+Link: https://excel-vanilla-js.web.app
+
 ### Implemented features:
 * Routing between pages without reloading
 * Adding/deleting new tables
